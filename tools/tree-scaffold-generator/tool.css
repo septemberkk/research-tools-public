@@ -1,0 +1,41 @@
+.tree-tool-page { padding-block: 40px 80px; }
+.tree-tool-page .breadcrumb { color: #69766f; }
+.tree-tool-shell { border: 1px solid #d6e1dc; border-top: 4px solid var(--tools-accent); border-radius: 18px; background: #fff; overflow: hidden; }
+.tree-tool-intro { padding: 40px 44px 34px; max-width: 850px; }
+.tree-tool-eyebrow { color: var(--tools-accent); font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; }
+.tree-tool-intro h1 { margin: 10px 0 17px; color: #2e433c; }
+.tree-tool-intro > p:not(.tree-tool-eyebrow) { max-width: 680px; color: #53675f; font-size: 1rem; line-height: 1.72; }
+.tree-tool-intro .tree-tool-privacy { margin-top: 10px; font-size: .81rem !important; color: #507b72 !important; }
+.tree-tool-workspace { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); border-top: 1px solid #d6e1dc; }
+.tree-tool-editor, .tree-tool-preview { min-width: 0; padding: 30px 34px 34px; }
+.tree-tool-editor { border-right: 1px solid #d6e1dc; }
+.tree-tool-editor label { display: block; color: #2e433c; font-size: 1.08rem; font-weight: 700; }
+.tree-tool-help { margin: 8px 0 18px; color: #64776f; font-size: .83rem; line-height: 1.6; }
+.tree-tool-help code { padding: 1px 4px; border-radius: 3px; background: #edf4f0; }
+.tree-tool-editor textarea { display: block; width: 100%; min-height: 270px; padding: 16px; border: 1px solid #a9c2b6; border-radius: 8px; background: #f9fcfa; color: #213d33; font: .83rem/1.55 Consolas, "Courier New", monospace; resize: vertical; white-space: pre; overflow: auto; }
+.tree-tool-editor textarea:focus-visible { outline: 2px solid var(--tools-accent); outline-offset: 2px; }
+.tree-tool-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+.tree-tool-actions button { border: 1px solid var(--tools-accent); border-radius: 6px; padding: 9px 15px; min-height: 42px; background: var(--tools-accent); color: #fff; font: inherit; font-size: .83rem; font-weight: 700; cursor: pointer; }
+.tree-tool-actions button + button { background: #fff; color: var(--tools-accent); }
+.tree-tool-actions button:hover:not(:disabled) { filter: brightness(.92); }
+.tree-tool-actions button:focus-visible { outline: 2px solid #254d41; outline-offset: 3px; }
+.tree-tool-actions button:disabled { opacity: .5; cursor: not-allowed; }
+.tree-tool-status { min-height: 1.5em; margin-top: 12px; color: #45685c; font-size: .82rem; }
+.tree-tool-status[data-error="true"] { color: #9c3e45; }
+.tree-tool-preview { background: #fafafb; }
+.tree-tool-preview h2 { margin-top: 5px; color: #2e433c; font-size: 1.45rem; }
+.tree-tool-preview > p { margin-top: 19px; color: #64776f; font-size: .87rem; }
+.tree-tool-preview pre { margin: 19px 0 0; padding: 17px; border: 1px solid #d6e1dc; border-radius: 8px; background: #fff; color: #2e433c; font: .8rem/1.62 Consolas, "Courier New", monospace; white-space: pre; overflow: auto; max-height: 430px; }
+.tree-tool-preview pre[hidden] { display: none; }
+.tree-tool-note { max-width: 850px; margin: 0; padding: 20px 44px 27px; border-top: 1px solid #d6e1dc; color: #60756b; font-size: .81rem; line-height: 1.65; }
+@media (max-width: 800px) {
+  .tree-tool-workspace { grid-template-columns: 1fr; }
+  .tree-tool-editor { border-right: 0; border-bottom: 1px solid #d6e1dc; }
+}
+@media (max-width: 620px) {
+  .tree-tool-page { padding-block: 28px 58px; }
+  .tree-tool-intro { padding: 27px 22px; }
+  .tree-tool-intro h1 { font-size: clamp(2.15rem, 10vw, 3rem); }
+  .tree-tool-editor, .tree-tool-preview { padding: 25px 20px; }
+  .tree-tool-note { padding: 20px 22px 25px; }
+}

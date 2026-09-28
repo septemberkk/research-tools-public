@@ -1,0 +1,7 @@
+Module_ID,Module_name,Primary_fill_color_hex,Module_order,Module_note
+M1,Module 1 display name,#D26A5F,1,Example module: replace with real meaning
+M2,Module 2 display name,#79BFAE,2,Example module: replace with real meaning
+M3,Module 3 display name,#8C6BB1,3,Example module: replace with real meaning
+M4,Module 4 display name,#6F9FC2,4,Example module: replace with real meaning
+M5,Module 5 display name,#E0A15A,5,Example module: replace with real meaning
+Unclassified,Unclassified,#BDBDBD,99,No mapped module or intentionally left unclassified

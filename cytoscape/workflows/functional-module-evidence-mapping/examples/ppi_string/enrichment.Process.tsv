@@ -1,0 +1,3 @@
+term_description	matching_genes	fdr	source_note
+Example inflammatory response process	GENE_A;GENE_B;GENE_E	0.001	GO Process example
+Example synaptic signaling process	GENE_C;GENE_D	0.004	GO Process example

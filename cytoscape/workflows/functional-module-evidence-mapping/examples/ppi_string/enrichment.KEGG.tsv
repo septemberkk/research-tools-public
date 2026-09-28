@@ -1,0 +1,3 @@
+term_description	matching_genes	fdr	source_note
+Example cytokine signaling pathway	GENE_A;GENE_E	0.002	KEGG example
+Example metabolic pathway	GENE_F;GENE_B	0.030	KEGG example

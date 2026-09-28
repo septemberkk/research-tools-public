@@ -1,0 +1,4 @@
+term_description	matching_genes	adjusted_p_value	database
+Example inflammatory response process	GENE_A,GENE_B	0.001	custom
+Example synaptic signaling process	GENE_C|GENE_D	0.004	custom
+Example neurovascular interface pathway	GENE_E;GENE_F	0.015	custom

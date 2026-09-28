@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Convert a final gene annotation CSV into Cytoscape node and module/color import tables in your browser.">
+  <meta name="theme-color" content="#4e2d5c">
+  <title>Cytoscape Import Table Builder | Research Tools</title>
+  <link rel="stylesheet" href="../base.css">
+  <link rel="stylesheet" href="tool.css">
+  <script type="module" src="tool.js"></script>
+</head>
+<body data-project-category="tools">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="tool-header"><div class="container header-inner"><a href="../../index.html">Research Tools</a><a href="https://yingjiekang.com/projects/cytoscape-import-table-builder/">Live version</a></div></header>
+  <main id="main" class="container cytoscape-tool-page">
+    <p class="breadcrumb"><a href="../../index.html">Tools</a> / Cytoscape Import Table Builder</p>
+    <div class="cytoscape-tool-shell">
+      <header class="cytoscape-tool-intro">
+        <p class="cytoscape-tool-eyebrow">Small browser tool · workflow companion</p>
+        <h1>Cytoscape Import Table Builder</h1>
+        <p>Convert an existing final gene annotation CSV into two Cytoscape import tables. Check the node attributes before downloading; join the node table to your existing network by <code>Gene</code>.</p>
+        <p class="cytoscape-tool-privacy">Your CSV stays in this browser. The page does not upload or save it.</p>
+      </header>
+      <div class="cytoscape-tool-flow" aria-label="Input and outputs">
+        <span>Final gene annotation CSV</span><span aria-hidden="true">→</span>
+        <strong>Node attributes</strong><span aria-hidden="true">+</span><strong>Module/color lookup</strong>
+      </div>
+      <section class="cytoscape-tool-workspace" aria-labelledby="cytoscape-input-heading">
+        <div class="cytoscape-tool-editor">
+          <label for="cytoscape-input" id="cytoscape-input-heading">Final annotation CSV</label>
+          <p class="cytoscape-tool-help"><code>Gene</code> is required and must be unique. The optional module, color, label, and core-gene columns follow the <a href="https://github.com/septemberkk/research-tools-public/tree/main/cytoscape/workflows/functional-module-evidence-mapping">evidence-mapping workflow</a>. This is an invented sample, not a biological result.</p>
+          <label class="cytoscape-file-label" for="cytoscape-file">Choose a CSV file</label>
+          <input id="cytoscape-file" type="file" accept=".csv,text/csv">
+          <span class="cytoscape-or">or paste/edit the CSV below</span>
+          <textarea id="cytoscape-input" spellcheck="false" rows="11">Gene,Primary_module_final,Module_name_final,Primary_fill_color_hex,Core_gene,Show_label,Selected_terms
+GENE_A,Immune response,Immune response,#7B8FB8,yes,yes,"term alpha, term beta"
+GENE_B,Immune response,Immune response,#7B8FB8,no,no,term alpha
+GENE_C,Metabolism,Metabolism,#C49A6C,no,yes,term gamma
+GENE_D,,,,no,no,</textarea>
+          <div class="cytoscape-tool-actions"><button id="cytoscape-preview-button" type="button">Build &amp; preview</button><button id="cytoscape-node-download" type="button" disabled>Download node CSV</button><button id="cytoscape-color-download" type="button" disabled>Download color CSV</button></div>
+          <p id="cytoscape-status" class="cytoscape-tool-status" role="status" aria-live="polite">Preview the synthetic example or use your own final annotation table.</p>
+        </div>
+        <section class="cytoscape-tool-result" aria-labelledby="cytoscape-preview-heading">
+          <p class="cytoscape-tool-eyebrow">Check before export</p>
+          <h2 id="cytoscape-preview-heading">Node table preview</h2>
+          <p id="cytoscape-summary" class="cytoscape-tool-summary" hidden></p>
+          <div class="cytoscape-table-scroll"><table id="cytoscape-preview" hidden></table></div>
+          <p class="cytoscape-tool-placeholder">The first six node rows will appear here after validation.</p>
+          <h3 id="cytoscape-colors-heading" class="cytoscape-colors-heading" hidden>Module/color lookup</h3>
+          <div class="cytoscape-table-scroll"><table id="cytoscape-color-preview" aria-labelledby="cytoscape-colors-heading" hidden></table></div>
+        </section>
+      </section>
+      <aside class="cytoscape-tool-note">
+        <h2>What this tool does—and does not do</h2>
+        <p>It matches the workflow’s default sizes (42 px; 56 px for core genes), label sizes (10/12 px), and borders (0.8/2.0 px). Missing modules become “Unclassified”; missing colors become gray. The node CSV is authoritative when individual genes have color overrides; the lookup can contain more than one color per module.</p>
+        <p>It does not infer modules, check biological evidence, build edges, create a Cytoscape network, or generate the workflow’s provenance files. For the complete evidence and heatmap pipeline, see <a href="https://github.com/septemberkk/research-tools-public/tree/main/cytoscape/workflows/functional-module-evidence-mapping">Functional Module Evidence Mapping</a>.</p>
+      </aside>
+    </div>
+    <p class="back-to-work"><a href="../../index.html">All tools</a></p>
+  </main>
+  <footer class="tool-footer"><div class="container">Public selection from Yingjie Kang's research tools.</div></footer>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "project_name": "synthetic_module_example",
+  "enrichment_source": "ppi_string",
+  "ppi_enrichment_dir": "examples/ppi_string",
+  "custom_enrichment_files": [
+    "examples/custom/enrichment_custom_example.tsv"
+  ],
+  "node_table": "examples/node_table.csv",
+  "term_map": "examples/mappings/term_to_module_mapping.csv",
+  "module_dict": "examples/mappings/module_dictionary.csv",
+  "manual_gene_curation": "examples/mappings/gene_manual_curation.csv",
+  "outdir": "results/ppi_example",
+  "core_only": false,
+  "exclude_unclassified": false,
+  "plot_heatmaps": true,
+  "build_cytoscape_import": true
+}

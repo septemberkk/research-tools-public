@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Paste a text file tree, preview its folders and files, and download an empty project scaffold as a ZIP.">
+  <meta name="theme-color" content="#4e2d5c">
+  <title>File Tree Scaffold Generator | Research Tools</title>
+  <link rel="stylesheet" href="../base.css">
+  <link rel="stylesheet" href="tool.css">
+  <script type="module" src="tool.js"></script>
+</head>
+<body data-project-category="tools">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="tool-header"><div class="container header-inner"><a href="../../index.html">Research Tools</a><a href="https://yingjiekang.com/projects/tree-scaffold-generator/">Live version</a></div></header>
+  <main id="main" class="container tree-tool-page">
+    <p class="breadcrumb"><a href="../../index.html">Tools</a> / File Tree Scaffold Generator</p>
+    <div class="tree-tool-shell">
+      <header class="tree-tool-intro">
+        <p class="tree-tool-eyebrow">Small browser tool</p>
+        <h1>File Tree Scaffold Generator</h1>
+        <p>Turn a pasted file tree into an empty folder-and-file scaffold. Preview the paths first, then download a ZIP.</p>
+        <p class="tree-tool-privacy">Your text stays in this browser. The page does not upload or save it.</p>
+      </header>
+      <section class="tree-tool-workspace" aria-labelledby="tree-tool-input-heading">
+        <div class="tree-tool-editor">
+          <label for="tree-input" id="tree-tool-input-heading">Paste a text tree</label>
+          <p class="tree-tool-help">Use a root folder ending in <code>/</code>, then standard <code>├──</code> and <code>└──</code> branches. Folder leaves should end in <code>/</code>.</p>
+          <textarea id="tree-input" spellcheck="false" rows="13">project-name/
+├── README.md
+├── pyproject.toml
+├── docs/
+│   ├── index.md
+│   └── methods/
+└── src/
+    └── package/
+        └── __init__.py</textarea>
+          <div class="tree-tool-actions"><button id="tree-preview-button" type="button">Preview structure</button><button id="tree-download-button" type="button" disabled>Download ZIP</button></div>
+          <p id="tree-status" class="tree-tool-status" role="status" aria-live="polite">Preview the example or paste your own tree.</p>
+        </div>
+        <section class="tree-tool-preview" aria-labelledby="tree-tool-preview-heading">
+          <div class="tree-tool-preview-heading"><p class="tree-tool-eyebrow">Before download</p><h2 id="tree-tool-preview-heading">Structure preview</h2></div>
+          <p id="tree-preview-placeholder">Your folders and empty files will appear here.</p>
+          <pre id="tree-preview" hidden></pre>
+        </section>
+      </section>
+      <p class="tree-tool-note">The ZIP contains empty files only; it never copies file contents or writes directly to your computer. The browser version accepts the common branch-tree format shown above.</p>
+    </div>
+    <p class="back-to-work"><a href="../../index.html">All tools</a></p>
+  </main>
+  <footer class="tool-footer"><div class="container">Public selection from Yingjie Kang's research tools.</div></footer>
+</body>
+</html>

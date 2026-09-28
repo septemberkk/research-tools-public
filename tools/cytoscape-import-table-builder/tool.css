@@ -1,0 +1,56 @@
+.cytoscape-tool-page { padding-block: 40px 80px; }
+.cytoscape-tool-page .breadcrumb { color: #69766f; }
+.cytoscape-tool-shell { border: 1px solid #d6e1dc; border-top: 4px solid var(--tools-accent); border-radius: 18px; background: #fff; overflow: hidden; }
+.cytoscape-tool-intro { padding: 40px 44px 31px; max-width: 960px; }
+.cytoscape-tool-eyebrow { margin: 0; color: var(--tools-accent); font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; }
+.cytoscape-tool-intro h1 { margin: 10px 0 17px; color: #2e433c; }
+.cytoscape-tool-intro > p:not(.cytoscape-tool-eyebrow) { max-width: 760px; color: #53675f; font-size: 1rem; line-height: 1.72; }
+.cytoscape-tool-intro .cytoscape-tool-privacy { margin-top: 10px; color: #507b72 !important; font-size: .81rem !important; }
+.cytoscape-tool-flow { display: flex; flex-wrap: wrap; gap: 9px; align-items: center; padding: 16px 44px; background: #fafafb; border-block: 1px solid #d6e1dc; color: #3f6256; font-size: .79rem; }
+.cytoscape-tool-flow strong { border: 1px solid #c7ddd2; border-radius: 5px; padding: 5px 8px; background: #fff; color: #315d4d; }
+.cytoscape-tool-workspace { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .95fr); }
+.cytoscape-tool-editor, .cytoscape-tool-result { min-width: 0; padding: 30px 34px 34px; }
+.cytoscape-tool-editor { border-right: 1px solid #d6e1dc; }
+.cytoscape-tool-editor > label:first-child { display: block; color: #2e433c; font-size: 1.08rem; font-weight: 700; }
+.cytoscape-tool-help { margin: 8px 0 18px; color: #64776f; font-size: .83rem; line-height: 1.6; }
+.cytoscape-tool-help code, .cytoscape-tool-intro code { padding: 1px 4px; border-radius: 3px; background: #edf4f0; }
+.cytoscape-tool-help a, .cytoscape-tool-note a { color: var(--tools-accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+.cytoscape-file-label { display: block; margin-bottom: 6px; color: #2e433c; font-size: .82rem; font-weight: 700; }
+.cytoscape-tool-editor input[type="file"] { display: block; max-width: 100%; color: #49645a; font: inherit; font-size: .8rem; }
+.cytoscape-or { display: block; margin: 15px 0 9px; color: #65786f; font-size: .77rem; }
+.cytoscape-tool-editor textarea { display: block; width: 100%; min-height: 225px; padding: 14px; border: 1px solid #a9c2b6; border-radius: 8px; background: #f9fcfa; color: #213d33; font: .78rem/1.55 Consolas, "Courier New", monospace; resize: vertical; white-space: pre; overflow: auto; }
+.cytoscape-tool-editor textarea:focus-visible, .cytoscape-tool-editor input:focus-visible { outline: 2px solid var(--tools-accent); outline-offset: 2px; }
+.cytoscape-tool-actions { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 18px; }
+.cytoscape-tool-actions button { min-height: 42px; border: 1px solid var(--tools-accent); border-radius: 6px; padding: 9px 13px; background: #fff; color: var(--tools-accent); font: inherit; font-size: .79rem; font-weight: 700; cursor: pointer; }
+.cytoscape-tool-actions button:first-child { background: var(--tools-accent); color: #fff; }
+.cytoscape-tool-actions button:hover:not(:disabled) { filter: brightness(.92); }
+.cytoscape-tool-actions button:focus-visible { outline: 2px solid #254d41; outline-offset: 3px; }
+.cytoscape-tool-actions button:disabled { opacity: .48; cursor: not-allowed; }
+.cytoscape-tool-status { min-height: 1.5em; margin: 12px 0 0; color: #45685c; font-size: .82rem; line-height: 1.55; }
+.cytoscape-tool-status[data-error="true"] { color: #9c3e45; }
+.cytoscape-tool-result { background: #fafafb; }
+.cytoscape-tool-result h2 { margin: 5px 0 12px; color: #2e433c; font-size: 1.45rem; }
+.cytoscape-tool-summary { margin: 0 0 12px; color: #315d4d; font-size: .81rem; font-weight: 700; }
+.cytoscape-colors-heading { margin: 24px 0 10px; color: #2e433c; font-size: 1.02rem; }
+.cytoscape-table-scroll { max-width: 100%; overflow: auto; border-radius: 8px; }
+.cytoscape-tool-result table { width: max-content; min-width: 100%; border-collapse: collapse; background: #fff; color: #334a40; font-size: .75rem; }
+.cytoscape-tool-result th, .cytoscape-tool-result td { max-width: 230px; border: 1px solid #d6e1dc; padding: 9px 11px; text-align: left; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cytoscape-tool-result th { background: #e8f0eb; font-weight: 700; }
+.cytoscape-tool-result tr:nth-child(even) td { background: #f9fbfa; }
+.cytoscape-tool-placeholder { margin-top: 18px; color: #64776f; font-size: .87rem; }
+.cytoscape-tool-result:has(table:not([hidden])) .cytoscape-tool-placeholder { display: none; }
+.cytoscape-tool-note { padding: 22px 44px 28px; border-top: 1px solid #d6e1dc; color: #60756b; font-size: .82rem; line-height: 1.65; }
+.cytoscape-tool-note h2 { margin: 0 0 8px; color: #36574b; font-size: 1rem; }
+.cytoscape-tool-note p { max-width: 970px; margin: 0 0 8px; }
+@media (max-width: 900px) {
+  .cytoscape-tool-workspace { grid-template-columns: 1fr; }
+  .cytoscape-tool-editor { border-right: 0; border-bottom: 1px solid #d6e1dc; }
+}
+@media (max-width: 620px) {
+  .cytoscape-tool-page { padding-block: 28px 58px; }
+  .cytoscape-tool-intro { padding: 27px 22px; }
+  .cytoscape-tool-intro h1 { font-size: clamp(2.15rem, 10vw, 3rem); }
+  .cytoscape-tool-flow { padding: 15px 22px; }
+  .cytoscape-tool-editor, .cytoscape-tool-result { padding: 25px 20px; }
+  .cytoscape-tool-note { padding: 20px 22px 25px; }
+}

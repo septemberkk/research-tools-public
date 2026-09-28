@@ -1,0 +1,3 @@
+term_description	matching_genes	fdr	source_note
+Example receptor adaptor signaling	GENE_A;GENE_B	0.005	Reactome example
+Example neuroactive receptor signaling	GENE_C;GENE_D	0.020	Reactome example

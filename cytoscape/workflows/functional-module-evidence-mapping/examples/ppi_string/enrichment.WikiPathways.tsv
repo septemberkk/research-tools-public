@@ -1,0 +1,3 @@
+term_description	matching_genes	fdr	source_note
+Example neurovascular interface pathway	GENE_E;GENE_F	0.015	WikiPathways example
+Example glial activation pathway	GENE_B;GENE_E	0.010	WikiPathways example

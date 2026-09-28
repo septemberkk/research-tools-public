@@ -1,0 +1,9 @@
+term_description,Module_ID,include,mapping_reason,mapping_confidence
+Example inflammatory response process,M1,yes,example input term assigned to module 1,high
+Example cytokine signaling pathway,M1,yes,example input term assigned to module 1,high
+Example receptor adaptor signaling,M1,yes,example input term assigned to module 1,medium
+Example glial activation pathway,M2,yes,example input term assigned to module 2,high
+Example synaptic signaling process,M3,yes,example input term assigned to module 3,high
+Example neuroactive receptor signaling,M3,yes,example input term assigned to module 3,medium
+Example metabolic pathway,M5,yes,example input term assigned to module 5,medium
+Example neurovascular interface pathway,M5,yes,example input term assigned to module 5,high

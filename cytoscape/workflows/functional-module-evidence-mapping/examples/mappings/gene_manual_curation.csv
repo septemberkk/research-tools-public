@@ -1,0 +1,4 @@
+Gene,Primary_module_manual,Functional_subtheme,Bridge_annotation,Evidence_basis,Curation_confidence,Curation_reason,Use_in_main_network,Display_color_override,Show_label_manual
+GENE_A,,,,,,,yes,,
+GENE_B,M2,example subtheme,M1 bridge,pathway + biological context,medium,Example: force primary display module only when recorded and justified,yes,,yes
+GENE_F,M5,example metabolic/neurovascular subtheme,,pathway evidence,high,Example manual row retained for traceability,yes,,

@@ -1,6 +1,6 @@
 # Research Tools — Public Selection
 
-This repository contains a deliberately small public selection of Yingjie Kang's research tools. It is not a mirror of the private working toolkit, and it contains no project data or generated analysis results.
+This repository contains a deliberately small public selection of Yingjie Kang's research tools. It is not a mirror of the private working toolkit, and it contains no real project data or research results. The only bundled example data and preview figure are synthetic.
 
 | Component | What it does | What it does not do |
 | --- | --- | --- |

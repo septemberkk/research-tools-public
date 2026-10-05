@@ -2,7 +2,9 @@ name: Checks
 
 on:
   push:
+    branches: [main]
   pull_request:
+    branches: [main]
 
 permissions:
   contents: read
@@ -20,7 +22,7 @@ jobs:
         with:
           node-version: '24'
       - name: Run Node tests
-        run: node --test tests/tree-scaffold-tool.test.mjs tests/cytoscape-import-tool.test.mjs
+        run: npm test
 
   python:
     name: Synthetic workflow checks

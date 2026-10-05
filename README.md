@@ -29,4 +29,6 @@ python -m unittest discover -s cytoscape/workflows/functional-module-evidence-ma
 
 The checks cover the browser tools and both synthetic workflow input modes. Real-data interpretation and Cytoscape layout require separate review.
 
-No `LICENSE` file is included; reuse terms have not been specified.
+## License
+
+Licensed under the [MIT License](LICENSE).

@@ -1,0 +1,15 @@
+{
+  "name": "category-color-mapping-core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Exact-key category colour mappings, table application and text exports.",
+  "license": "MIT",
+  "exports": {
+    ".": "./category-color-mapping.js",
+    "./csv": "./csv.js"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

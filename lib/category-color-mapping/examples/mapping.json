@@ -1,0 +1,10 @@
+{
+  "schema": "research-tools/category-colors",
+  "schema_version": 1,
+  "mapping_name": "synthetic-demo-groups",
+  "mapping": [
+    {"category": "Group_A", "color_hex": "#234567"},
+    {"category": "Group_B", "color_hex": "#89ABCD"},
+    {"category": "Group_C", "color_hex": "#DE7812"}
+  ]
+}

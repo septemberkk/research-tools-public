@@ -6,6 +6,11 @@
 .tree-tool-intro h1 { margin: 10px 0 17px; color: #2e433c; }
 .tree-tool-intro > p:not(.tree-tool-eyebrow) { max-width: 680px; color: #53675f; font-size: 1rem; line-height: 1.72; }
 .tree-tool-intro .tree-tool-privacy { margin-top: 10px; font-size: .81rem !important; color: #507b72 !important; }
+.tree-tool-tabs { display: flex; flex-wrap: wrap; gap: 8px; padding: 0 34px 20px; }
+.tree-tool-tabs button { min-height: 44px; padding: 10px 16px; border: 1px solid #b7c8c0; border-radius: 7px; background: #fff; color: #45685c; font: inherit; font-size: .86rem; cursor: pointer; }
+.tree-tool-tabs button[aria-selected="true"] { background: #edf4f0; border-color: var(--tools-accent); color: #254d41; font-weight: 700; }
+.tree-tool-tabs button:focus-visible { outline: 2px solid #254d41; outline-offset: 3px; }
+.tree-tool-panel[hidden], #starter-generated[hidden] { display: none; }
 .tree-tool-workspace { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); border-top: 1px solid #d6e1dc; }
 .tree-tool-editor, .tree-tool-preview { min-width: 0; padding: 30px 34px 34px; }
 .tree-tool-editor { border-right: 1px solid #d6e1dc; }
@@ -28,6 +33,20 @@
 .tree-tool-preview pre { margin: 19px 0 0; padding: 17px; border: 1px solid #d6e1dc; border-radius: 8px; background: #fff; color: #2e433c; font: .8rem/1.62 Consolas, "Courier New", monospace; white-space: pre; overflow: auto; max-height: 430px; }
 .tree-tool-preview pre[hidden] { display: none; }
 .tree-tool-note { max-width: 850px; margin: 0; padding: 20px 44px 27px; border-top: 1px solid #d6e1dc; color: #60756b; font-size: .81rem; line-height: 1.65; }
+.starter-editor h2 { margin: 7px 0 10px; font-size: 1.45rem; color: #2e433c; }
+.starter-field { margin-top: 18px; }
+.starter-field label, .starter-file-preview label { margin-bottom: 7px; color: #2e433c; font-size: .88rem; font-weight: 700; }
+.starter-field label span { font-weight: 400; color: #64776f; }
+.starter-field input, .starter-field select, .starter-file-preview select { display: block; width: 100%; max-width: 100%; min-width: 0; min-height: 44px; padding: 10px 11px; border: 1px solid #a9c2b6; border-radius: 7px; background: #f9fcfa; color: #213d33; font: inherit; font-size: .86rem; }
+.starter-field .tree-tool-help { margin: 7px 0 0; font-size: .78rem; }
+.starter-editor #starter-question { min-height: 115px; padding: 11px; white-space: pre-wrap; font: inherit; font-size: .86rem; }
+.starter-field input:focus-visible, .starter-field select:focus-visible, .starter-file-preview select:focus-visible, .starter-preview pre:focus-visible, .starter-structure summary:focus-visible { outline: 2px solid var(--tools-accent); outline-offset: 3px; }
+.starter-summary { color: #45685c; font-size: .8rem; line-height: 1.7; margin: 15px 0; }
+.starter-structure summary { color: #45685c; font-size: .87rem; font-weight: 700; cursor: pointer; padding-block: 8px; }
+.starter-preview #starter-tree { max-height: 260px; margin-top: 6px; }
+.starter-file-preview { margin-top: 22px; }
+.starter-file-preview label { display: block; }
+.starter-preview #starter-content { max-height: 340px; margin-top: 12px; }
 @media (max-width: 800px) {
   .tree-tool-workspace { grid-template-columns: 1fr; }
   .tree-tool-editor { border-right: 0; border-bottom: 1px solid #d6e1dc; }
@@ -38,4 +57,5 @@
   .tree-tool-intro h1 { font-size: clamp(2.15rem, 10vw, 3rem); }
   .tree-tool-editor, .tree-tool-preview { padding: 25px 20px; }
   .tree-tool-note { padding: 20px 22px 25px; }
+  .tree-tool-tabs { padding: 0 22px 20px; }
 }

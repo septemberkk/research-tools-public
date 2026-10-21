@@ -3,25 +3,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Paste a text file tree, preview its folders and files, and download an empty project scaffold as a ZIP.">
+  <meta name="description" content="Preview a text tree or create a research project starter with directories, README and planning templates, then download a ZIP.">
   <meta name="theme-color" content="#4e2d5c">
   <title>File Tree Scaffold Generator | Research Tools</title>
   <link rel="stylesheet" href="../base.css">
   <link rel="stylesheet" href="tool.css">
   <script type="module" src="tool.js"></script>
+  <script type="module" src="project-starter.js"></script>
 </head>
 <body data-project-category="tools">
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="tool-header"><div class="container header-inner"><a href="../../index.html">Research Tools</a><a href="https://yingjiekang.com/projects/tree-scaffold-generator/">Live version</a></div></header>
+  <header class="tool-header"><div class="container header-inner"><a href="../../index.html">Research Tools</a><a href="https://github.com/septemberkk/research-tools-public">GitHub</a></div></header>
   <main id="main" class="container tree-tool-page">
     <p class="breadcrumb"><a href="../../index.html">Tools</a> / File Tree Scaffold Generator</p>
     <div class="tree-tool-shell">
       <header class="tree-tool-intro">
         <p class="tree-tool-eyebrow">Small browser tool</p>
         <h1>File Tree Scaffold Generator</h1>
-        <p>Turn a pasted file tree into an empty folder-and-file scaffold. Preview the paths first, then download a ZIP.</p>
+        <p>Turn a text tree into an empty scaffold, or start a research project with directories and planning templates. Review first, then download a ZIP.</p>
         <p class="tree-tool-privacy">Your text stays in this browser. The page does not upload or save it.</p>
       </header>
+      <div class="tree-tool-tabs" role="tablist" aria-label="Scaffold mode">
+        <button id="text-tree-tab" type="button" role="tab" aria-controls="text-tree-panel" aria-selected="true" tabindex="0">Text tree</button>
+        <button id="project-starter-tab" type="button" role="tab" aria-controls="project-starter-panel" aria-selected="false" tabindex="-1">Research project</button>
+      </div>
+      <div id="text-tree-panel" class="tree-tool-panel" role="tabpanel" aria-labelledby="text-tree-tab">
       <section class="tree-tool-workspace" aria-labelledby="tree-tool-input-heading">
         <div class="tree-tool-editor">
           <label for="tree-input" id="tree-tool-input-heading">Paste a text tree</label>
@@ -44,7 +50,57 @@
           <pre id="tree-preview" hidden></pre>
         </section>
       </section>
-      <p class="tree-tool-note">The ZIP contains empty files only; it never copies file contents or writes directly to your computer. The browser version accepts the common branch-tree format shown above.</p>
+      <p class="tree-tool-note">Text tree mode creates empty files only. It never copies file contents or writes directly to your computer. Use the common branch-tree format shown above.</p>
+      </div>
+      <div id="project-starter-panel" class="tree-tool-panel" role="tabpanel" aria-labelledby="project-starter-tab" hidden>
+        <div class="tree-tool-workspace starter-workspace">
+          <form id="starter-form" class="tree-tool-editor starter-editor" novalidate aria-labelledby="starter-heading">
+            <p class="tree-tool-eyebrow">From folder tree to project starting point</p>
+            <h2 id="starter-heading">Research Project Starter</h2>
+            <p class="tree-tool-help">Choose a starting structure, add your question, and review the included templates. No data, dependencies or executable pipeline are supplied.</p>
+            <div class="starter-field">
+              <label for="starter-type">Project type</label>
+              <select id="starter-type" aria-describedby="starter-type-help">
+                <option value="data-analysis">Dataset analysis</option>
+                <option value="simulation">Computational simulation</option>
+                <option value="figure-workflow">Paper figure workflow</option>
+              </select>
+              <p id="starter-type-help" class="tree-tool-help"></p>
+            </div>
+            <div class="starter-field">
+              <label for="starter-root">Project folder</label>
+              <input id="starter-root" type="text" value="research-project" maxlength="64" spellcheck="false" autocomplete="off" aria-describedby="starter-root-help">
+              <p id="starter-root-help" class="tree-tool-help">Lowercase letters, digits, hyphens or underscores; start with a letter. Extract into a new folder, not over an existing project.</p>
+            </div>
+            <div class="starter-field">
+              <label for="starter-title">Project title</label>
+              <input id="starter-title" type="text" value="Research project" maxlength="120" autocomplete="off">
+            </div>
+            <div class="starter-field">
+              <label for="starter-question">Scientific question <span>(optional)</span></label>
+              <textarea id="starter-question" rows="4" maxlength="2000" placeholder="What question or claim will this project address?" aria-describedby="starter-question-help"></textarea>
+              <p id="starter-question-help" class="tree-tool-help">Leave blank if not defined. No methods, claims or experiment IDs are inferred from your text.</p>
+            </div>
+            <div class="tree-tool-actions"><button id="starter-preview-button" type="submit">Preview starter</button><button id="starter-download-button" type="button" disabled>Download project ZIP</button></div>
+            <p id="starter-status" class="tree-tool-status" role="status" aria-live="polite">Review a starter before downloading. Nothing has been run.</p>
+          </form>
+          <section class="tree-tool-preview starter-preview" aria-labelledby="starter-preview-heading">
+            <p class="tree-tool-eyebrow">Review directories and file contents</p>
+            <h2 id="starter-preview-heading">Project preview</h2>
+            <p id="starter-placeholder">Your folder structure and populated templates will appear here.</p>
+            <div id="starter-generated" hidden>
+              <p id="starter-summary" class="starter-summary"></p>
+              <details class="starter-structure" open><summary>Folder structure</summary><pre id="starter-tree" tabindex="0" aria-label="Generated folder structure"></pre></details>
+              <div class="starter-file-preview">
+                <label for="starter-file">Inspect a template</label>
+                <select id="starter-file"></select>
+                <pre id="starter-content" tabindex="0" aria-label="Selected template contents"></pre>
+              </div>
+            </div>
+          </section>
+        </div>
+        <p class="tree-tool-note">Research project mode includes populated Markdown, JSON and CSV planning templates. Registries contain headers only; no experiment IDs or results are invented. Raw inputs are read-only by policy, not enforced permissions. This is a lightweight starter, not the full project-governance package.</p>
+      </div>
     </div>
     <p class="back-to-work"><a href="../../index.html">All tools</a></p>
   </main>

@@ -35,7 +35,7 @@
       <section class="cytoscape-tool-workspace" aria-labelledby="cytoscape-input-heading">
         <div class="cytoscape-tool-editor">
           <label for="cytoscape-input" id="cytoscape-input-heading">Final annotation CSV</label>
-          <p class="cytoscape-tool-help"><code>Gene</code> is required and must be unique. The optional module, color, label, and core-gene columns follow the <a href="https://github.com/septemberkk/research-tools-public/tree/main/cytoscape/workflows/functional-module-evidence-mapping">evidence-mapping workflow</a>. This is an invented sample, not a biological result.</p>
+          <p class="cytoscape-tool-help"><code>Gene</code> is required and must be unique. The optional module, color, label, and core-gene columns follow the <a href="https://github.com/septemberkk/research-workflow-public/tree/main/workflows/functional-module-evidence-mapping">evidence-mapping workflow</a>. This is an invented sample, not a biological result.</p>
           <label class="cytoscape-file-label" for="cytoscape-file">Choose a CSV file</label>
           <input id="cytoscape-file" type="file" accept=".csv,text/csv">
           <span class="cytoscape-or">or paste/edit the CSV below</span>
@@ -110,7 +110,7 @@ GENE_D,,,,no,no,</textarea>
       <aside class="cytoscape-tool-note">
         <h2>What this tool does—and does not do</h2>
         <p>It matches the workflow’s default sizes (42 px; 56 px for core genes), label sizes (10/12 px), and borders (0.8/2.0 px). Missing modules become “Unclassified”; missing colors become gray. The node CSV is authoritative when individual genes have color overrides; the lookup can contain more than one color per module.</p>
-        <p>It does not infer modules, check biological evidence, build edges, create a Cytoscape network, or generate the workflow’s provenance files. For the complete evidence and heatmap pipeline, see <a href="https://github.com/septemberkk/research-tools-public/tree/main/cytoscape/workflows/functional-module-evidence-mapping">Functional Module Evidence Mapping</a>.</p>
+        <p>It does not infer modules, check biological evidence, build edges, create a Cytoscape network, or generate the workflow’s provenance files. For the complete evidence and heatmap pipeline, see <a href="https://github.com/septemberkk/research-workflow-public/tree/main/workflows/functional-module-evidence-mapping">Functional Module Evidence Mapping</a>.</p>
       </aside>
     </div>
     <p class="back-to-work"><a href="../../index.html">All tools</a></p>

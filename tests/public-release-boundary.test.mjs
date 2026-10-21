@@ -52,9 +52,11 @@ test('runtime modules are local, self-contained and do not upload or persist inp
 
 test('public pages keep existing entry points, integrated tabs and valid local links', async () => {
   const overview = await read('index.html');
-  assert.equal((overview.match(/class="toolkit-card"/gu) || []).length, 3);
+  assert.equal((overview.match(/class="toolkit-card"/gu) || []).length, 2);
   assert.match(overview, /Research Project Starter/);
   assert.match(overview, /Table Match Checker/);
+  assert.match(overview, /https:\/\/github\.com\/septemberkk\/research-workflow-public/);
+  await assert.rejects(access(new URL('cytoscape/workflows/functional-module-evidence-mapping/run_pipeline.py', root)), { code: 'ENOENT' });
   for (const path of ['index.html', ...toolFiles.filter(path => path.endsWith('.html'))]) {
     const html = await read(path);
     assert.doesNotMatch(html, /<script[^>]+src=["']https?:/iu);

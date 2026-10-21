@@ -1,7 +1,7 @@
 # Cytoscape Import Table Builder
 
 An MIT-licensed, dependency-free browser utility with two tabs at one stable URL.
-The existing import-table builder and workflow remain unchanged by this release.
+Its annotation conventions follow [Functional Module Evidence Mapping](https://github.com/septemberkk/research-workflow-public/tree/main/workflows/functional-module-evidence-mapping), shared separately in Research Workflows.
 
 ## Build import tables
 

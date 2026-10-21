@@ -70,5 +70,5 @@ test('standalone tool page documents local-only processing and workflow connecti
   assert.match(page, /Your CSV stays in this browser/);
   assert.match(page, /does not infer modules/);
   assert.match(page, /src="tool\.js"/);
-  assert.match(page, /research-tools-public\/tree\/main\/cytoscape\/workflows\/functional-module-evidence-mapping/);
+  assert.match(page, /research-workflow-public\/tree\/main\/workflows\/functional-module-evidence-mapping/);
 });

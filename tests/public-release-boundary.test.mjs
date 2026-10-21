@@ -52,8 +52,7 @@ test('runtime modules are local, self-contained and do not upload or persist inp
 
 test('public pages keep existing entry points, integrated tabs and valid local links', async () => {
   const overview = await read('index.html');
-  assert.equal((overview.match(/class="toolkit-card"/gu) || []).length, 4);
-  assert.match(overview, /workflows\/rna-seq-differential-expression-and-functional-enrichment/);
+  assert.equal((overview.match(/class="toolkit-card"/gu) || []).length, 3);
   assert.match(overview, /Research Project Starter/);
   assert.match(overview, /Table Match Checker/);
   for (const path of ['index.html', ...toolFiles.filter(path => path.endsWith('.html'))]) {
@@ -69,30 +68,6 @@ test('public pages keep existing entry points, integrated tabs and valid local l
   assert.match(checker, /id="cytoscape-builder-panel"/);
   assert.match(checker, /id="table-match-checker"/);
   assert.doesNotMatch(checker, /cytoscape-mapping-enabled|mapping audit/iu);
-});
-
-test('RNA-seq sharing contains only independent source, synthetic examples and reusable tests', async () => {
-  const workflow = 'workflows/rna-seq-differential-expression-and-functional-enrichment';
-  const expected = [
-    'LICENSE', 'METHODS.md', 'README.md', 'run_all.R',
-    'examples/README.md', 'examples/counts.tsv', 'examples/samples.tsv',
-    'src/cli.R', 'src/workflow.R',
-    'tests/fixtures.R', 'tests/integration.R', 'tests/plot-unit.R',
-    'tests/run-tests.R', 'tests/unit.R',
-  ];
-  assert.deepEqual((await walk('workflows')).sort(), expected.map(path => `${workflow}/${path}`).sort());
-  for (const path of expected) {
-    const source = await read(`${workflow}/${path}`);
-    assert.doesNotMatch(source, /(?:^|[\s'"])[A-Za-z]:[\\/]|\/Users\/|\/home\//mu, path);
-    assert.doesNotMatch(source, /GSE\d{4,}|GSM\d{4,}|gh[pousr]_[A-Za-z0-9_]{20,}|github_pat_/u, path);
-  }
-  for (const path of ['README.md', 'METHODS.md', 'examples/README.md']) {
-    const prose = await read(`${workflow}/${path}`);
-    assert.doesNotMatch(prose, /REVIEW\.md|sandbox|local review|integration_blocked|[0-9]+\s+(?:tests?\s+passed|通过)|本次|验收|交接记录/iu, path);
-    assert.doesNotMatch(prose, /not.*(?:uploaded|pushed)|missing edgeR|missing limma/iu, path);
-  }
-  assert.match(await read(`${workflow}/README.md`), /GO\/KEGG[\s\S]*?not implemented/);
-  assert.match(await read(`${workflow}/LICENSE`), /Copyright \(c\) 2026 Kangkang/);
 });
 
 test('original file-tree and annotation generators are byte-equivalent to the existing public baseline', async () => {

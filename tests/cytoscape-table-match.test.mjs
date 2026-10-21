@@ -221,7 +221,8 @@ test('checker is an Import Builder feature, with explicit keys and no new top-le
   assert.match(html, /No fuzzy matching/);
   assert.match(html, /SHA-256/);
   const overview = await readFile(new URL('../index.html', import.meta.url), 'utf8');
-  assert.equal((overview.match(/class="toolkit-card"/g) ?? []).length, 3);
+  assert.equal((overview.match(/class="toolkit-card"/g) ?? []).length, 4);
+  assert.equal((overview.match(/<span>Browser tool<\/span>/g) ?? []).length, 2);
   for (const name of ['table-match.js', 'table-match-model.js']) {
     const script = await readFile(new URL('../tools/cytoscape-import-table-builder/' + name, import.meta.url), 'utf8');
     assert.doesNotMatch(script, /\bfetch\s*\(|XMLHttpRequest|localStorage|sessionStorage|indexedDB|sendBeacon|\.innerHTML\s*=/);
